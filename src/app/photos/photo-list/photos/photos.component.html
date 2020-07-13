@@ -1,0 +1,11 @@
+<p *ngIf="!photos.length" class="text-center text-muted">
+	Nenhuma foto foi encontrada
+</p>
+<ul class="list-unstyled">
+	<li *ngFor="let cols of rows" class="row">
+		<div *ngFor="let photo of cols" class="col-4">
+			<ap-photo [url]="photo.url" [description]="photo.description">
+			</ap-photo>
+		</div>
+	</li>
+</ul>
