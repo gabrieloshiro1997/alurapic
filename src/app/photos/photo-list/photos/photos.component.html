@@ -2,10 +2,20 @@
 	Nenhuma foto foi encontrada
 </p>
 <ul class="list-unstyled">
-	<li *ngFor="let cols of rows" class="row">
-		<div *ngFor="let photo of cols" class="col-4">
-			<ap-photo [url]="photo.url" [description]="photo.description">
-			</ap-photo>
+	<li *ngFor="let cols of rows" class="row no-gutters">
+		<div *ngFor="let photo of cols" class="col-4" apDarkenOnHover brightness="70%">
+			<ap-card>
+
+				<ap-photo 
+					[url]="photo.url" 
+					[description]="photo.description">
+				</ap-photo>
+				
+				<div class="text-center p-1">
+					<i class="fa fa-heart-o fa-1x mr-2"></i>{{ photo.likes }}
+					<i class="fa fa-comment-o fa-1x mr-2"></i>{{ photo.comments }}
+				</div>
+			</ap-card>
 		</div>
 	</li>
 </ul>
